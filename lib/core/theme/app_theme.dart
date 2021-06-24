@@ -1,4 +1,4 @@
-import 'package:payflow/core/core.dart';
+import '/core/core.dart';
 
 class AppTheme {
   static AppColors get colors => AppColorsDefault();

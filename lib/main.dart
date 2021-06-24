@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'core/core.dart';
 
 void main() {
-  runApp(const AppWidget());
+  runApp(const AppFirebase());
 }

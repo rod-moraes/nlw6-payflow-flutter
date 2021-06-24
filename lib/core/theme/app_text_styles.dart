@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:payflow/core/core.dart';
+import '/core/core.dart';
 
 abstract class AppTextStyles {
   TextStyle get titleHome;
@@ -24,6 +24,7 @@ abstract class AppTextStyles {
   TextStyle get captionBoldBackground;
   TextStyle get captionBoldShape;
   TextStyle get captionBoldBody;
+  TextStyle get subtitleShape;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -37,7 +38,7 @@ class AppTextStylesDefault implements AppTextStyles {
   TextStyle get titleRegular => GoogleFonts.lexendDeca(
         fontSize: 20,
         fontWeight: FontWeight.w400,
-        color: AppTheme.colors.heading,
+        color: AppTheme.colors.background,
       );
   @override
   TextStyle get titleBoldHeading => GoogleFonts.lexendDeca(
@@ -152,5 +153,11 @@ class AppTextStylesDefault implements AppTextStyles {
         fontSize: 13,
         fontWeight: FontWeight.w600,
         color: AppTheme.colors.body,
+      );
+  @override
+  TextStyle get subtitleShape => GoogleFonts.inter(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.shape,
       );
 }

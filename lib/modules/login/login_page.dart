@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/core/core.dart';
-import 'package:payflow/widgets/social_login_button/social_login_button_widget.dart';
+import 'package:payflow/modules/login/login_controller.dart';
+import 'package:payflow/shared/widgets/social_login_button/social_login_button_widget.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final controller = LoginController();
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -57,7 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                         EdgeInsets.symmetric(horizontal: size.width * 0.10),
                     child: SocialButtonWidget(
                       label: "Entrar com Google",
-                      onTap: () {},
+                      onTap: () {
+                        controller.googleSignIn(context);
+                      },
                     ),
                   ),
                 ],

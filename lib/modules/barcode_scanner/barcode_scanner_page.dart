@@ -94,7 +94,9 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                 bottomNavigationBar: SetLabelButtonsWidget(
                   primaryLabel: "Inserir código do boleto",
                   secondaryLabel: "Adicionar da galeria",
-                  onTapPrimary: () {},
+                  onTapPrimary: () {
+                    controller.status = BarcodeScannerStatus.error("Error");
+                  },
                   onTapSecondary: () {},
                 ),
               ),
@@ -103,21 +105,19 @@ class _BarcodeScannerPageState extends State<BarcodeScannerPage> {
                 valueListenable: controller.statusNotifier,
                 builder: (_, status, __) {
                   if (status.hasError) {
-                    return Container(
-                      child: BottomSheetWidget(
-                        primaryLabel: "Escanear novamente",
-                        secondaryLabel: "Digitar código",
-                        onTapPrimary: () {
-                          controller.scanWithCamera();
-                          setState(() {});
-                        },
-                        onTapSecondary: () {},
-                        title:
-                            "Não foi possível identificar um código de barras.",
-                        subtitle:
-                            "Tente escanear novamente ou digite o código do seu boleto.",
-                      ),
-                    );
+                    return Align(
+                        alignment: Alignment.bottomLeft,
+                        child: BottomSheetWidget(
+                            primaryLabel: "Escanear novamente",
+                            onTapPrimary: () {
+                              controller.scanWithCamera();
+                            },
+                            secondaryLabel: "Digitar código",
+                            onTapSecondary: () {},
+                            title:
+                                "Não foi possível identificar um código de barras.",
+                            subtitle:
+                                "Tente escanear novamente ou digite o código do seu boleto."));
                   } else {
                     return Container();
                   }

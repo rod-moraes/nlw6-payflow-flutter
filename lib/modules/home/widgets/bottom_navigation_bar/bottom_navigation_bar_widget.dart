@@ -35,7 +35,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5)),
               child: IconButton(
                   onPressed: () {
-                    onTap(1);
+                    Navigator.pushNamed(context, "/barcode");
                   },
                   icon: Icon(
                     Icons.add_box_outlined,
@@ -44,7 +44,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
             ),
             IconButton(
                 onPressed: () {
-                  onTap(2);
+                  onTap(1);
                 },
                 icon: Icon(
                   Icons.description_outlined,

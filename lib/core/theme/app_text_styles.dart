@@ -25,6 +25,7 @@ abstract class AppTextStyles {
   TextStyle get captionBoldShape;
   TextStyle get captionBoldBody;
   TextStyle get subtitleShape;
+  TextStyle get input;
 }
 
 class AppTextStylesDefault implements AppTextStyles {
@@ -117,6 +118,13 @@ class AppTextStylesDefault implements AppTextStyles {
         fontSize: 15,
         fontWeight: FontWeight.w700,
         color: AppTheme.colors.background,
+      );
+
+  @override
+  TextStyle get input => GoogleFonts.inter(
+        fontSize: 15,
+        fontWeight: FontWeight.w400,
+        color: AppTheme.colors.input,
       );
   @override
   TextStyle get captionBackground => GoogleFonts.lexendDeca(

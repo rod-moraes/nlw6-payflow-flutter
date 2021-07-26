@@ -9,6 +9,7 @@ abstract class AppColors {
   Color get stroke;
   Color get shape;
   Color get background;
+  Color get input;
 }
 
 class AppColorsDefault implements AppColors {
@@ -35,4 +36,7 @@ class AppColorsDefault implements AppColors {
 
   @override
   Color get stroke => const Color(0xFFE3E3E6);
+
+  @override
+  Color get input => const Color(0xFFb1b0b8);
 }
